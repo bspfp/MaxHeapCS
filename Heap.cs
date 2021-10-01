@@ -48,6 +48,7 @@ namespace MaxHeapCS {
                 return default;
             throw new InvalidOperationException();
         }
+        public void Clear() { data_.Clear(); }
 
         public static void Make(IList<T> data) { Make(data, DefaultComparer); }
         public static void Make(IList<T> data, Comparer comparer) {

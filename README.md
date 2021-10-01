@@ -79,6 +79,8 @@ static void Main(string[] args) {
 - T Pop()<br/>
   최상위 값을 꺼내기, heap에서 제거됨<br/>
   데이터가 없을 때, T가 nullable이거나 class 이면 null을 반환하고, null이 불가능한 데이터 타입이면 InvalidOperationException 예외를 발생
+- void Clear()<br/>
+  데이터 모두 삭제
 
 ##### 정적 메서드
 
