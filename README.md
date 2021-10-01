@@ -4,7 +4,7 @@
 
 기본 동작은 max heap입니다.
 
-내부에서 List<T>를 사용합니다.
+내부에서 List&lt;T&gt;를 사용합니다.
 
 ### 예시
 
@@ -49,48 +49,48 @@ static void Main(string[] args) {
 // Heap sort: result: 1 2 3 4 5 6 7 8 9 10
 ```
 
-### class Heap<T>
+### class Heap&lt;T&gt;
 
 ##### 생성자
 
-- Heap(int capacity = DefaultCapacity)
-  Heap(Comparer comparer, int capacity = DefaultCapacity)
-  Heap(IEnumerable<T> data)
-  Heap(Comparer comparer, IEnumerable<T> data)
-  - int capacity
+- Heap(int capacity = DefaultCapacity)<br/>
+  Heap(Comparer comparer, int capacity = DefaultCapacity)<br/>
+  Heap(IEnumerable&lt;T&gt; data)<br/>
+  Heap(Comparer comparer, IEnumerable&lt;T&gt; data)<br/>
+  - int capacity<br/>
     heap 데이터를 위한 컨테이너의 공간을 지정합니다.
-  - Comparer comparer
-    T 타입 값 2개를 비교하는 방법을 지정합니다.
+  - Comparer comparer<br/>
+    T 타입 값 2개를 비교하는 방법을 지정합니다.<br/>
     C++의 STL과 같이 작은 값을 반환하면 max heap이 구성됩니다. (기본값)
-  - IEnumerable<T> data
+  - IEnumerable&lt;T&gt; data<br/>
     data로 heap의 데이터를 초기 구성합니다.
 
 ##### 메서드
 
-- void Push(T newElem)
+- void Push(T newElem)<br/>
   newElem을 Heap에 넣기
-- bool TryPeek(out T elem)
+- bool TryPeek(out T elem)<br/>
   최상위 값을 읽기, heap에서 제거하지 않음
-- bool TryPop(out T elem)
+- bool TryPop(out T elem)<br/>
   최상위 값을 꺼내기, heap에서 제거됨
-- T Peek()
-  최상위 값을 읽기, heap에서 제거하지 않음
+- T Peek()<br/>
+  최상위 값을 읽기, heap에서 제거하지 않음<br/>
   데이터가 없을 때, T가 nullable이거나 class 이면 null을 반환하고, null이 불가능한 데이터 타입이면 InvalidOperationException 예외를 발생
-- T Pop()
-  최상위 값을 꺼내기, heap에서 제거됨
+- T Pop()<br/>
+  최상위 값을 꺼내기, heap에서 제거됨<br/>
   데이터가 없을 때, T가 nullable이거나 class 이면 null을 반환하고, null이 불가능한 데이터 타입이면 InvalidOperationException 예외를 발생
 
 ##### 정적 메서드
 
-- static void Make(IList<T> data)
-  static void Make(IList<T> data, Comparer comparer)
+- static void Make(IList&lt;T&gt; data)<br/>
+  static void Make(IList&lt;T&gt; data, Comparer comparer)<br/>
   data를 heap으로 구성합니다.
-- static void Push(IList<T> data, T newElem)
-  static void Push(IList<T> data, T newElem, Comparer comparer)
+- static void Push(IList&lt;T&gt; data, T newElem)<br/>
+  static void Push(IList&lt;T&gt; data, T newElem, Comparer comparer)<br/>
   newElem을 data에 추가하여 heap을 구성합니다. data는 이미 heap으로 구성되어 있어야 합니다.
-- static bool Pop(IList<T> data, out T elem)
-  static bool Pop(IList<T> data, out T elem, Comparer comparer)
-  static bool Pop(IList<T> data, int count)
-  static bool Pop(IList<T> data, int count, Comparer comparer)
-  data에서 최상위 값을 꺼냅니다.
+- static bool Pop(IList&lt;T&gt; data, out T elem)<br/>
+  static bool Pop(IList&lt;T&gt; data, out T elem, Comparer comparer)<br/>
+  static bool Pop(IList&lt;T&gt; data, int count)<br/>
+  static bool Pop(IList&lt;T&gt; data, int count, Comparer comparer)<br/>
+  data에서 최상위 값을 꺼냅니다.<br/>
   count는 data의 길이를 지정합니다. (예시의 heap sort 참고) 
