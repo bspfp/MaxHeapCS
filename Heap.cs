@@ -35,16 +35,16 @@ namespace MaxHeapCS {
         }
         public bool TryPop(out T elem) { return Pop(data_, out elem, comparer_); }
         public T Peek() {
-            if (TryPeek(out T elem))
-                return elem;
-            if (Nullable.GetUnderlyingType(typeof(T)) != null || typeof(string).IsClass)
+            if (data_.Count > 0)
+                return data_[0];
+            if (Nullable.GetUnderlyingType(typeof(T)) != null || typeof(T).IsClass)
                 return default;
             throw new InvalidOperationException();
         }
         public T Pop() {
             if (TryPop(out T elem))
                 return elem;
-            if (Nullable.GetUnderlyingType(typeof(T)) != null || typeof(string).IsClass)
+            if (Nullable.GetUnderlyingType(typeof(T)) != null || typeof(T).IsClass)
                 return default;
             throw new InvalidOperationException();
         }
