@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace MaxHeapCS {
@@ -27,7 +27,7 @@ namespace MaxHeapCS {
         public void Push(T newElem) { Push(data_, newElem, comparer_); }
         public bool TryPeek(out T elem) {
             if (data_.Count > 0) {
-                elem = data_[0];
+                elem = data_[data_.Count - 1];
                 return true;
             }
             elem = default;
@@ -36,7 +36,7 @@ namespace MaxHeapCS {
         public bool TryPop(out T elem) { return Pop(data_, out elem, comparer_); }
         public T Peek() {
             if (data_.Count > 0)
-                return data_[0];
+                return data_[data_.Count - 1];
             if (Nullable.GetUnderlyingType(typeof(T)) != null || typeof(T).IsClass)
                 return default;
             throw new InvalidOperationException();
